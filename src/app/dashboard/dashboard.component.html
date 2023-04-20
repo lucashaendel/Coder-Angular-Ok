@@ -1,0 +1,49 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <!-- SIDEBAR -->
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Paginas</p>
+          <div class="cont-b">
+            <button color="primary" (click)="showFiller = !showFiller" mat-raised-button>
+                Formulario
+            </button>
+            <button color="primary" (click)="showFiller = !showFiller" mat-raised-button>
+                Tabla
+            </button>
+          </div>
+    </mat-drawer>
+    
+    <!-- TOOLBAR -->
+    <mat-toolbar color="accent" >
+        <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        >
+        <mat-icon>menu</mat-icon>
+        </button>
+        <span class="example-spacer">Desafio 10 - Strak</span>
+        <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        >
+        <mat-icon>favorite</mat-icon>
+        </button>
+        <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+        >
+        <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <p class="reloj">{{ horaActual$ | async}}</p>
+
+    <app-formulario></app-formulario>
+    <app-tabla></app-tabla>
+
+
+  </mat-drawer-container>
